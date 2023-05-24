@@ -57,6 +57,9 @@ const onClickBtn = () => {
     textInput.current.focus();  // --- ⓷ useRef가 가리키는 input 태그에 포커스 이벤트 적용
   };
 
+<input type="text" />
+<input type="button" value="ref X" />
+
 <input type="text" ref={textInput} />  // --- ⓶ ref props로 전달
 <input type="button" value="ref O" onClick={onClickBtn} />
 ```
