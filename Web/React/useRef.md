@@ -14,7 +14,7 @@ const ref = useRef(initialValue);
 
 ```jsx
 const [stateCount, setStateCount] = useState(0);
-const [refCount, setRefCount] = useState(0);
+const refCount = useRef(0);
 
 <button onClick={() => {
   setStateCount((prev) => prev + 1);
