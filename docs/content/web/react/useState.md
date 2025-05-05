@@ -1,5 +1,6 @@
 ---
 title: React useState Hook
+description: 리액트의 useState에 대한 설명
 date: 2023-05-24
 author: 안정음
 tags: [React, Hook, useState, State Management]

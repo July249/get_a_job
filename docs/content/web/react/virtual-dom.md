@@ -1,5 +1,6 @@
 ---
 title: React의 Virtual DOM
+description: React의 가상 DOM에 대한 설명
 date: 2023-05-10
 author: 안정음
 tags: [React, Virtual DOM, Reconciliation, Diffing]
@@ -87,6 +88,7 @@ React는 Real DOM과 Virtual DOM, diff 알고리즘을 이용해 변화가 일�
 React는 두 가지 가정을 기반으로 O(n³)의 복잡도를 O(n)으로 줄일 수 있는 휴리스틱 알고리즘을 구현했습니다:
 
 1. **서로 다른 타입의 두 엘리먼트는 다른 트리를 만들어낸다**
+
    - 루트 엘리먼트의 타입이 다르면 React는 이전 트리를 버리고 새로운 트리를 구축
    - 예: `<div>`에서 `<span>`으로 변경되면 이전 트리는 완전히 파괴됨
 
@@ -97,6 +99,7 @@ React는 두 가지 가정을 기반으로 O(n³)의 복잡도를 O(n)으로 줄
 ### Reconciliation 과정
 
 1. **엘리먼트 타입 비교**
+
    ```jsx
    // 이전 트리
    <div>
@@ -108,9 +111,11 @@ React는 두 가지 가정을 기반으로 O(n³)의 복잡도를 O(n)으로 줄
      <Counter />
    </span>
    ```
+
    - Counter 컴포넌트는 파괴되고 새로 마운트됨
 
 2. **DOM 엘리먼트 타입 비교**
+
    ```jsx
    // 이전 트리
    <div className="before" title="stuff" />
@@ -118,9 +123,11 @@ React는 두 가지 가정을 기반으로 O(n³)의 복잡도를 O(n)으로 줄
    // 새로운 트리
    <div className="after" title="stuff" />
    ```
+
    - className만 변경되므로 React는 해당 노드만 수정
 
 3. **자식 엘리먼트 재귀적 처리**
+
    ```jsx
    // 이전 트리
    <ul>
@@ -135,25 +142,28 @@ React는 두 가지 가정을 기반으로 O(n³)의 복잡도를 O(n)으로 줄
      <li>third</li>
    </ul>
    ```
+
    - React는 `<li>first</li>`와 `<li>second</li>`를 유지하고 `<li>third</li>`만 추가
 
 ### 성능 최적화
 
 1. **불필요한 리렌더링 방지**
+
    - `React.memo`를 사용하여 props가 변경되지 않았을 때 리렌더링 방지
    - `useMemo`와 `useCallback`을 사용하여 계산 비용이 큰 작업 메모이제이션
 
 2. **key 사용 시 주의사항**
+
    ```jsx
    // ❌ 잘못된 사용
-   {items.map((item, index) => (
-     <li key={index}>{item}</li>
-   ))}
+   {
+     items.map((item, index) => <li key={index}>{item}</li>);
+   }
 
    // ✅ 올바른 사용
-   {items.map((item) => (
-     <li key={item.id}>{item.name}</li>
-   ))}
+   {
+     items.map((item) => <li key={item.id}>{item.name}</li>);
+   }
    ```
 
 ## 📚 참고 자료

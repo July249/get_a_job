@@ -1,5 +1,6 @@
 ---
 title: React useEffect Hook
+description: 리액트의 useEffect에 대한 설명
 date: 2024-05-10
 author: 임하연
 tags: [React, Hook, useEffect, Side Effect]

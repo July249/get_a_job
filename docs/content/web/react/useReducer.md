@@ -1,5 +1,6 @@
 ---
 title: React useReducer Hook
+description: 리액트의 useReducer에 대한 설명
 date: 2023-05-31
 author: 이시현, 임하연
 tags: [React, Hook, useReducer, State Management]

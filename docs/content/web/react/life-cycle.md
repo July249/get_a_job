@@ -1,5 +1,6 @@
 ---
 title: React의 생명주기(Life Cycle)
+description: React에서의 생애주기에 대한 설명
 date: 2024-05-01
 author: 임하연, 이지형
 tags: [React, Life Cycle, Hook, Component]
@@ -24,6 +25,7 @@ React 컴포넌트의 생명주기는 크게 세 단계로 나눌 수 있습니�
 React에서는 두 가지 방식으로 컴포넌트를 작성할 수 있습니다:
 
 ### 1. 클래스형 컴포넌트
+
 ```jsx
 class MyComponent extends React.Component {
   constructor(props) {
@@ -54,6 +56,7 @@ class MyComponent extends React.Component {
 ```
 
 ### 2. 함수형 컴포넌트
+
 ```jsx
 function MyComponent() {
   const [count, setCount] = useState(0); // 상태 정의
@@ -77,23 +80,27 @@ function MyComponent() {
 ## 📊 Hook의 생명주기
 
 ### 1. Mount 단계
+
 - Hook 객체가 생성됨
 - 초기 상태값이 설정됨
+
 ```jsx
 function mountState(initialState) {
   const hook = {
     memoizedState: initialState,
     baseState: initialState,
     queue: null,
-    next: null
+    next: null,
   };
   return [hook.memoizedState, dispatch];
 }
 ```
 
 ### 2. Update 단계
+
 - 상태 변경이 발생하면 Hook의 queue에 저장
 - 새로운 상태값으로 업데이트
+
 ```jsx
 function updateState(initialState) {
   const hook = updateWorkInProgressHook();
@@ -106,13 +113,16 @@ function updateState(initialState) {
 ## 🤔 주요 생명주기 메소드와 Hook
 
 ### 클래스형 컴포넌트의 주요 메소드
+
 1. **마운트**
+
    - `constructor()`: 컴포넌트 생성 시 호출, 초기 상태 설정
    - `static getDerivedStateFromProps()`: props로부터 state를 도출
    - `render()`: 화면에 그릴 내용을 반환
    - `componentDidMount()`: 컴포넌트가 화면에 나타난 후 호출
 
 2. **업데이트**
+
    - `static getDerivedStateFromProps()`: props 변경 시 호출
    - `shouldComponentUpdate()`: 리렌더링 여부 결정
    - `render()`: 변경된 내용을 화면에 반영
@@ -123,12 +133,15 @@ function updateState(initialState) {
    - `componentWillUnmount()`: 컴포넌트가 화면에서 사라지기 전 호출
 
 ### 함수형 컴포넌트의 주요 Hook
+
 1. **useState**: 상태 관리
+
 ```jsx
 const [state, setState] = useState(초기값);
 ```
 
 2. **useEffect**: 생명주기 관리
+
 ```jsx
 // 1. 마운트 + 업데이트 시 실행
 useEffect(() => {
@@ -155,6 +168,7 @@ useEffect(() => {
 ```
 
 3. **useLayoutEffect**: DOM 업데이트 직전에 동기적으로 실행
+
 ```jsx
 useLayoutEffect(() => {
   // DOM 업데이트 직전에 실행할 코드
@@ -164,17 +178,20 @@ useLayoutEffect(() => {
 ## 💡 실전 사용 팁
 
 1. **함수형 컴포넌트 사용 권장**
+
    - 코드가 더 간결하고 이해하기 쉬움
    - Hook을 통한 생명주기 관리가 직관적
    - React 팀에서도 함수형 컴포넌트 사용을 권장
 
 2. **useEffect 사용 시 주의사항**
+
    - 의존성 배열을 올바르게 설정
    - 불필요한 리렌더링 방지
    - 무한 루프 주의
    - 클린업 함수 활용
 
 3. **상태 관리**
+
    - `useState`로 간단한 상태 관리
    - 복잡한 상태는 `useReducer` 사용 고려
    - 전역 상태는 Context API나 Redux 사용

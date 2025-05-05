@@ -1,5 +1,6 @@
 ---
 title: React useMemo와 useCallback
+description: 리액트의 useMemo와 useCallback에 대한 설명 및 비교
 date: 2023-05-31
 author: 임하연, 이시현
 tags: [React, Hook, useMemo, useCallback, Performance]

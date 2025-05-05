@@ -1,5 +1,6 @@
 ---
 title: React useRef Hook
+description: 리액트의 useRef에 대한 설명
 date: 2023-05-24
 author: 안정음
 tags: [React, Hook, useRef, DOM]
