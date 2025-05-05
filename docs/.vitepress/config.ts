@@ -54,6 +54,6 @@ export default defineConfig({
       // ],
     },
 
-    socialLinks: [{ icon: 'github', link: 'https://github.com/July249/team-blog' }],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/July249/get_a_job' }],
   },
 });
