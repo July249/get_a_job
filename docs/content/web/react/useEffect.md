@@ -5,6 +5,8 @@ author: 임하연
 tags: [React, Hook, useEffect, Side Effect]
 ---
 
+# React useEffect Hook
+
 ## useEffect
 
 ```jsx
@@ -22,6 +24,7 @@ useEffect(콜백함수, [의존성 배열])
 ### useEffect와 Side Effect
 
 - 부수 효과(Side Effect)란?
+
   - 함수를 입력값에 대해 일정한 출력을 하는 것으로 가정할 때, 출력값에 영향을 미치지 않는 모든 작업들
   - React 컴포넌트가 화면에 렌더링된 이후에 애플리케이션에서 일어나는 다른 모든 것
   - 예시:
@@ -45,7 +48,7 @@ useEffect(콜백함수, [의존성 배열])
 
    ```jsx
    useEffect(() => {
-     console.log("렌더링");
+     console.log('렌더링');
    });
    ```
 
@@ -56,7 +59,7 @@ useEffect(콜백함수, [의존성 배열])
 
    ```jsx
    useEffect(() => {
-     console.log("렌더링");
+     console.log('렌더링');
    }, []);
    ```
 
@@ -68,7 +71,7 @@ useEffect(콜백함수, [의존성 배열])
 
    ```jsx
    useEffect(() => {
-     console.log("렌더링");
+     console.log('렌더링');
    }, [text]);
    ```
 
@@ -91,10 +94,10 @@ function Timer() {
       // 타이머 로직
     }, 1000);
 
-    console.log("마운트 될 때 실행");
+    console.log('마운트 될 때 실행');
 
     return () => {
-      console.log("언마운트 될 때 실행");
+      console.log('언마운트 될 때 실행');
       clearInterval(timer);
     };
   }, []); // 의존성 배열이 비어있으므로 마운트/언마운트 시에만 실행
@@ -106,15 +109,18 @@ function Timer() {
 ### useEffect 사용 시 주의사항
 
 1. **의존성 배열 관리**
+
    - 필요한 모든 의존성을 포함시켜야 함
    - 불필요한 의존성은 제거
    - ESLint 규칙을 준수
 
 2. **무한 루프 방지**
+
    - effect 내부에서 상태를 업데이트할 때 주의
    - 의존성 배열이 올바르게 설정되었는지 확인
 
 3. **비동기 처리**
+
    - effect 내부에서 async/await 사용 시 주의
    - cleanup 함수에서 비동기 작업 정리 필요
 

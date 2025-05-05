@@ -5,7 +5,7 @@ author: 이시현, 임하연
 tags: [React, Hook, useReducer, State Management]
 ---
 
-# useReducer
+# React useReducer Hook
 
 ```jsx
 const [state, dispatch] = useReducer(reducer, initialArg, init?)
@@ -22,10 +22,10 @@ const [state, dispatch] = useReducer(reducer, initialArg, init?)
 ```
 
 - `state`: 컴포넌트에서 사용할 상태
-- `dispatch`: 
+- `dispatch`:
   - 첫번째 인자인 reducer 함수를 실행시킴
   - 컴포넌트 내에서 state의 업데이트를 일으키기 위해 사용하는 함수
-- `reducer`: 
+- `reducer`:
   - 컴포넌트 외부에서 state를 업데이트하는 함수
   - 현재 state, action 객체를 인자로 받아 기존의 state를 대체하여 새로운 state를 반환하는 함수
 - `initialArg`: 초기 state
@@ -34,28 +34,31 @@ const [state, dispatch] = useReducer(reducer, initialArg, init?)
 ## useReducer의 구성 요소
 
 ### 1. 반환값
+
 - `state`: 현재 상태
 - `dispatch`: action을 발생시키는 함수
   - reducer 함수를 실행시킴
   - 컴포넌트 내에서 state 업데이트를 일으키기 위해 사용
 
 ### 2. 매개변수
-- `reducer`: 
+
+- `reducer`:
   - 컴포넌트 외부에서 state를 업데이트하는 순수 함수
   - 현재 state와 action 객체를 인자로 받아 새로운 state를 반환
   - 이전 state를 변경하지 않고 새로운 state를 반환해야 함
-- `initialArg`: 
+- `initialArg`:
   - 초기 state가 계산되는 값
   - init 함수가 제공되지 않은 경우 초기 state로 사용됨
-- `init` (선택적): 
+- `init` (선택적):
   - 초기 state를 지연 생성하기 위한 초기화 함수
   - `initialArg`를 인자로 받아 초기 state를 반환
 
 ## 사용 예시
 
 ### 1. 기본적인 사용법
+
 ```jsx
-import { useReducer } from "react";
+import { useReducer } from 'react';
 
 function reducer(state, action) {
   switch (action.type) {
@@ -82,6 +85,7 @@ function Counter() {
 ```
 
 ### 2. 초기화 함수 사용
+
 ```jsx
 function init(initialCount) {
   return { count: initialCount };
@@ -106,9 +110,7 @@ function Counter({ initialCount }) {
   return (
     <div>
       Count: {state.count}
-      <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>
-        Reset
-      </button>
+      <button onClick={() => dispatch({ type: 'reset', payload: initialCount })}>Reset</button>
       <button onClick={() => dispatch({ type: 'increment' })}>+</button>
       <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
     </div>
@@ -119,11 +121,13 @@ function Counter({ initialCount }) {
 ## 주의사항
 
 1. **Reducer는 순수 함수여야 함**
+
    - 같은 입력에 대해 항상 같은 출력을 반환해야 함
    - 사이드 이펙트를 발생시키지 않아야 함
    - 이전 state를 직접 수정하지 않아야 함
 
 2. **Action 객체의 형태**
+
    - 주로 `type` 값을 지닌 객체 형태로 사용
    - action 객체의 형태는 자유롭게 정의 가능
    - 일반적으로 `type`과 `payload`를 포함

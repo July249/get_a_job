@@ -5,7 +5,9 @@ author: 안정음
 tags: [React, Hook, useState, State Management]
 ---
 
-# useState
+# React useState Hook
+
+## useState
 
 ```jsx
 const [state, setState] = useState(initialValue);
@@ -30,7 +32,7 @@ const [state, setState] = useState(initialValue);
 ```jsx
 function Counter() {
   const [count, setCount] = useState(0);
-  
+
   return (
     <div>
       <p>현재 카운트: {count}</p>
@@ -45,7 +47,7 @@ function Counter() {
 ```jsx
 const [count, setCount] = useState(0);
 setCount(count + 1); // 직접 값 설정
-setCount(prevCount => prevCount + 1); // 이전 값 기반으로 설정
+setCount((prevCount) => prevCount + 1); // 이전 값 기반으로 설정
 ```
 
 - state의 값을 갱신하기 위한 함수
@@ -65,7 +67,7 @@ setCount(prevCount => prevCount + 1); // 이전 값 기반으로 설정
 const [count, setCount] = useState(0);
 
 // 문자열
-const [name, setName] = useState("");
+const [name, setName] = useState('');
 
 // 불리언
 const [isLoading, setIsLoading] = useState(false);
@@ -74,7 +76,7 @@ const [isLoading, setIsLoading] = useState(false);
 const [items, setItems] = useState([]);
 
 // 객체
-const [user, setUser] = useState({ name: "", age: 0 });
+const [user, setUser] = useState({ name: '', age: 0 });
 ```
 
 - 초깃값은 컴포넌트의 첫 렌더링에서만 사용됨
@@ -115,8 +117,8 @@ console.log(count); // 여전히 0
 
 // ✅ 올바른 사용
 const [count, setCount] = useState(0);
-setCount(prevCount => prevCount + 1);
-setCount(prevCount => prevCount + 1);
+setCount((prevCount) => prevCount + 1);
+setCount((prevCount) => prevCount + 1);
 console.log(count); // 여전히 0 (하지만 다음 렌더링에서 2가 됨)
 ```
 
@@ -141,20 +143,20 @@ useEffect(() => {
 
 // 여러 번의 업데이트 예시
 const handleClick = () => {
-  setCount(count + 1);     // count는 여전히 0
-  setCount(count + 1);     // count는 여전히 0
-  console.log(count);      // 0 출력
-  
+  setCount(count + 1); // count는 여전히 0
+  setCount(count + 1); // count는 여전히 0
+  console.log(count); // 0 출력
+
   // 다음 렌더링에서 count는 1이 됨
   // (두 번의 setCount가 하나의 업데이트로 처리됨)
 };
 
 // 함수형 업데이트를 사용한 올바른 예시
 const handleClickCorrect = () => {
-  setCount(prev => prev + 1);  // 이전 값(0) + 1
-  setCount(prev => prev + 1);  // 이전 값(1) + 1
-  console.log(count);          // 0 출력
-  
+  setCount((prev) => prev + 1); // 이전 값(0) + 1
+  setCount((prev) => prev + 1); // 이전 값(1) + 1
+  console.log(count); // 0 출력
+
   // 다음 렌더링에서 count는 2가 됨
   // (각 setCount가 이전 값을 기반으로 계산)
 };
@@ -164,15 +166,15 @@ const handleClickCorrect = () => {
 
 ```jsx
 // ❌ 잘못된 사용
-const [user, setUser] = useState({ name: "John", age: 30 });
+const [user, setUser] = useState({ name: 'John', age: 30 });
 user.age = 31; // 직접 수정
 setUser(user); // 변경사항이 감지되지 않음
 
 // ✅ 올바른 사용
-const [user, setUser] = useState({ name: "John", age: 30 });
-setUser(prevUser => ({
+const [user, setUser] = useState({ name: 'John', age: 30 });
+setUser((prevUser) => ({
   ...prevUser,
-  age: 31
+  age: 31,
 }));
 ```
 
@@ -185,50 +187,52 @@ React는 상태 업데이트를 감지할 때 얕은 비교(shallow comparison)�
 
 ```jsx
 // 예시 1: 객체 속성 직접 수정
-const [user, setUser] = useState({ name: "John", age: 30 });
+const [user, setUser] = useState({ name: 'John', age: 30 });
 
 // ❌ 잘못된 방법
-user.age = 31;  // 객체의 속성만 변경
-setUser(user);  // 참조값은 동일하므로 React는 변경을 감지하지 못함
+user.age = 31; // 객체의 속성만 변경
+setUser(user); // 참조값은 동일하므로 React는 변경을 감지하지 못함
 
 // ✅ 올바른 방법
-setUser(prevUser => ({
-  ...prevUser,  // 이전 객체의 모든 속성을 복사
-  age: 31       // age 속성만 새로운 값으로 업데이트
+setUser((prevUser) => ({
+  ...prevUser, // 이전 객체의 모든 속성을 복사
+  age: 31, // age 속성만 새로운 값으로 업데이트
 }));
 ```
 
 ```jsx
 // 예시 2: 중첩된 객체 업데이트
 const [user, setUser] = useState({
-  name: "John",
+  name: 'John',
   address: {
-    city: "Seoul",
-    zipCode: "12345"
-  }
+    city: 'Seoul',
+    zipCode: '12345',
+  },
 });
 
 // ❌ 잘못된 방법
-user.address.city = "Busan";  // 중첩된 객체의 속성만 변경
-setUser(user);  // 참조값은 동일하므로 React는 변경을 감지하지 못함
+user.address.city = 'Busan'; // 중첩된 객체의 속성만 변경
+setUser(user); // 참조값은 동일하므로 React는 변경을 감지하지 못함
 
 // ✅ 올바른 방법
-setUser(prevUser => ({
+setUser((prevUser) => ({
   ...prevUser,
   address: {
-    ...prevUser.address,  // 중첩된 객체도 새로운 참조로 복사
-    city: "Busan"
-  }
+    ...prevUser.address, // 중첩된 객체도 새로운 참조로 복사
+    city: 'Busan',
+  },
 }));
 ```
 
 #### 객체 업데이트 시 주의사항
 
 1. **얕은 복사 vs 깊은 복사**
+
    - 얕은 복사(`...`)는 중첩된 객체의 참조는 그대로 유지
    - 깊은 복사가 필요한 경우 `JSON.parse(JSON.stringify())` 또는 `structuredClone()` 사용
 
 2. **불변성 유지**
+
    - React는 상태의 불변성을 가정하고 설계됨
    - 객체를 직접 수정하지 않고 항상 새로운 객체를 생성
 
@@ -239,27 +243,27 @@ setUser(prevUser => ({
 ```jsx
 // 예시 3: 여러 속성 동시 업데이트
 const [user, setUser] = useState({
-  name: "John",
+  name: 'John',
   age: 30,
-  address: "Seoul",
-  phone: "123-4567"
+  address: 'Seoul',
+  phone: '123-4567',
 });
 
 // ✅ 효율적인 업데이트
-setUser(prevUser => ({
+setUser((prevUser) => ({
   ...prevUser,
-  name: "Jane",
-  age: 31
+  name: 'Jane',
+  age: 31,
 }));
 
 // ✅ 함수형 업데이트로 여러 번의 업데이트 처리
-setUser(prevUser => ({
+setUser((prevUser) => ({
   ...prevUser,
-  name: "Jane"
+  name: 'Jane',
 }));
-setUser(prevUser => ({
+setUser((prevUser) => ({
   ...prevUser,
-  age: 31
+  age: 31,
 }));
 ```
 
@@ -267,10 +271,10 @@ setUser(prevUser => ({
 
 ```jsx
 // ❌ 불필요한 state
-const [fullName, setFullName] = useState(firstName + " " + lastName);
+const [fullName, setFullName] = useState(firstName + ' ' + lastName);
 
 // ✅ 계산된 값 사용
-const fullName = firstName + " " + lastName;
+const fullName = firstName + ' ' + lastName;
 ```
 
 - 계산 가능한 값은 state로 관리하지 않기

@@ -5,7 +5,7 @@ author: 안정음
 tags: [React, Hook, useRef, DOM]
 ---
 
-# useRef
+# React useRef Hook
 
 ```jsx
 const ref = useRef(initialValue);
@@ -18,7 +18,7 @@ const ref = useRef(initialValue);
 - DOM 요소 참조 시, 실제 DOM이 업데이트된 후에 참조를 얻음
   - React의 렌더링 사이클이 완료된 후에 `.current`가 실제 DOM 요소를 가리키게 됨
   - 이는 가상 DOM이 아닌 실제 DOM에 접근한다는 의미
-  <br><br>
+    <br><br>
 
 ## useRef의 활용
 
@@ -79,7 +79,7 @@ const onClickBtn = () => {
 ```jsx
 function MyComponent() {
   const inputRef = useRef(null);
-  
+
   useEffect(() => {
     // 여기서 inputRef.current는 실제 DOM 요소를 가리킴
     // React의 렌더링 사이클이 완료된 후에 실행됨
@@ -124,7 +124,7 @@ function Timer() {
 
   useEffect(() => {
     timerRef.current = setInterval(() => {
-      setCount(c => c + 1);
+      setCount((c) => c + 1);
     }, 1000);
 
     return () => clearInterval(timerRef.current);
@@ -137,15 +137,16 @@ function Timer() {
 ## useRef 사용 시 주의사항
 
 1. **렌더링 중에는 ref.current를 읽거나 쓰지 않기**
+
    ```jsx
    // ❌ 잘못된 사용
    function MyComponent() {
      const [count, setCount] = useState(0);
      const ref = useRef(0);
-     
+
      // 렌더링 중에 ref.current를 수정
      ref.current = count;
-     
+
      return <div>{ref.current}</div>;
    }
 
@@ -153,26 +154,28 @@ function Timer() {
    function MyComponent() {
      const [count, setCount] = useState(0);
      const ref = useRef(0);
-     
+
      useEffect(() => {
        // 렌더링 후에 ref.current를 수정
        ref.current = count;
      });
-     
+
      return <div>{count}</div>;
    }
    ```
 
 2. **초기값 설정**
+
    - useRef의 초기값은 첫 렌더링에서만 사용됨
    - 이후 렌더링에서는 무시됨
    - DOM 참조의 경우 초기값은 null로 설정
 
 3. **ref 콜백 사용**
+
    ```jsx
    function MeasureExample() {
      const [height, setHeight] = useState(0);
-     const measuredRef = useCallback(node => {
+     const measuredRef = useCallback((node) => {
        if (node !== null) {
          // node는 실제 DOM 요소
          // React의 렌더링 사이클이 완료된 후에 실행됨
