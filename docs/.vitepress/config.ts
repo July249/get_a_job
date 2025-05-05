@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   title: 'Team Blog',
   description: 'Team Blog',
-  base: '/',
+  base: '/get_a_job/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
