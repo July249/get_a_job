@@ -158,5 +158,3 @@ console.log(x); // 5
 
 - https://poiemaweb.com/es6-block-scope
 - https://www.freecodecamp.org/korean/news/var-let-constyi-caijeomeun/
-
----

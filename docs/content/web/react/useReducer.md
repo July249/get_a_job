@@ -142,5 +142,3 @@ function Counter({ initialCount }) {
 
 - [React 공식 문서 - useReducer](https://react.dev/reference/react/useReducer)
 - [React 공식 문서 - State 로직을 Reducer로 추출하기](https://react.dev/learn/extracting-state-logic-into-a-reducer)
-
----

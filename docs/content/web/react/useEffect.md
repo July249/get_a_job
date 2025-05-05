@@ -133,7 +133,3 @@ function Timer() {
 
 - [React 공식 문서 - useEffect](https://ko.legacy.reactjs.org/docs/hooks-effect.html)
 - [React 공식 문서 - useEffect 완벽 가이드](https://overreacted.io/a-complete-guide-to-useeffect/)
-
----
-
-작성자: 임하연

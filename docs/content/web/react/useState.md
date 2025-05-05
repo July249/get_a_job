@@ -285,5 +285,3 @@ const fullName = firstName + ' ' + lastName;
 
 - [React 공식 문서 - useState](https://react.dev/reference/react/useState)
 - [React 공식 문서 - 상태 관리](https://react.dev/learn/managing-state)
-
----

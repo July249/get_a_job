@@ -14,3 +14,5 @@ hero:
       text: Study History
       link: /content
 ---
+
+<RecentPosts />

@@ -171,5 +171,3 @@ React는 두 가지 가정을 기반으로 O(n³)의 복잡도를 O(n)으로 줄
 - [React 공식 문서 - Reconciliation](https://react.dev/learn/preserving-and-resetting-state)
 - [React 공식 문서 - Diffing 알고리즘](https://react.dev/learn/render-and-commit)
 - [React 공식 문서 - 성능 최적화](https://react.dev/learn/render-and-commit#step-3-react-commits-changes-to-the-dom)
-
----

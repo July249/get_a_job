@@ -183,5 +183,3 @@ SSR과 CSR을 상황에 맞게 조합하여 사용하는 방식입니다.
 - [Next.js 공식 문서 - 렌더링 방식](https://nextjs.org/docs/basic-features/pages)
 - [React 공식 문서 - 서버 사이드 렌더링](https://react.dev/reference/react-dom/server)
 - [Vue.js 공식 문서 - SSR 가이드](https://vuejs.org/guide/scaling-up/ssr.html)
-
----

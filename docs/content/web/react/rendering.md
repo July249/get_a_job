@@ -179,7 +179,3 @@ const memoizedCallback = useCallback(() => {
 - [React 렌더링 심층 분석](https://yceffort.kr/2022/04/deep-dive-in-react-rendering)
 - [React는 언제 컴포넌트를 렌더링하나요?](https://velog.io/@eunbinn/when-does-react-render-your-component)
 - [React 공식 문서 - 성능 최적화](https://ko.legacy.reactjs.org/docs/optimizing-performance.html)
-
----
-
-작성자: 안정음, 이시현

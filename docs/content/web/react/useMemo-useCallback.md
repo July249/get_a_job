@@ -217,7 +217,3 @@ const cachedFunction = useCallback(fn, dependencies);
 - [React 공식 문서 - useMemo](https://react.dev/reference/react/useMemo)
 - [React 공식 문서 - useCallback](https://react.dev/reference/react/useCallback)
 - [React 공식 문서 - 메모이제이션](https://react.dev/learn/memoization)
-
----
-
-작성자: 임하연

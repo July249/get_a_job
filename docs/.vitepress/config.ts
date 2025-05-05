@@ -5,6 +5,8 @@ export default defineConfig({
   title: 'Team Blog',
   description: 'Team Blog',
   base: '/get_a_job/',
+  outDir: './.vitepress/dist',
+  assetsDir: 'static',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

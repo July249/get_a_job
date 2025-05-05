@@ -206,7 +206,3 @@ useLayoutEffect(() => {
 - React 공식 문서: https://react.dev/learn/lifecycle-of-reactive-effects
 - React Hooks 문서: https://react.dev/reference/react/hooks
 - React 생명주기 다이어그램: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
-
----
-
-작성자: 임하연, 이지형
