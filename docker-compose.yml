@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  blog:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4000:80'
+    volumes:
+      - ./docs:/app/docs
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
