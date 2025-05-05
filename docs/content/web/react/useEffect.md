@@ -1,5 +1,6 @@
 ---
 title: React useEffect Hook
+description: 리액트의 useEffect에 대한 설명
 date: 2024-05-10
 author: 임하연
 tags: [React, Hook, useEffect, Side Effect]
@@ -132,7 +133,3 @@ function Timer() {
 
 - [React 공식 문서 - useEffect](https://ko.legacy.reactjs.org/docs/hooks-effect.html)
 - [React 공식 문서 - useEffect 완벽 가이드](https://overreacted.io/a-complete-guide-to-useeffect/)
-
----
-
-작성자: 임하연

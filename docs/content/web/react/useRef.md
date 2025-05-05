@@ -1,5 +1,6 @@
 ---
 title: React useRef Hook
+description: 리액트의 useRef에 대한 설명
 date: 2023-05-24
 author: 안정음
 tags: [React, Hook, useRef, DOM]
@@ -196,5 +197,3 @@ function Timer() {
 - [React 공식 문서 - useRef](https://react.dev/reference/react/useRef)
 - [React 공식 문서 - ref 콜백](https://react.dev/learn/manipulating-the-dom-with-refs#how-to-manage-a-list-of-refs-using-a-ref-callback)
 - [React 공식 문서 - DOM 조작](https://react.dev/learn/manipulating-the-dom-with-refs)
-
----

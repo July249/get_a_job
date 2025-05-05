@@ -1,5 +1,6 @@
 ---
 title: React useState Hook
+description: 리액트의 useState에 대한 설명
 date: 2023-05-24
 author: 안정음
 tags: [React, Hook, useState, State Management]
@@ -284,5 +285,3 @@ const fullName = firstName + ' ' + lastName;
 
 - [React 공식 문서 - useState](https://react.dev/reference/react/useState)
 - [React 공식 문서 - 상태 관리](https://react.dev/learn/managing-state)
-
----

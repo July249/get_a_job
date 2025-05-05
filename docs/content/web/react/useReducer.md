@@ -1,5 +1,6 @@
 ---
 title: React useReducer Hook
+description: 리액트의 useReducer에 대한 설명
 date: 2023-05-31
 author: 이시현, 임하연
 tags: [React, Hook, useReducer, State Management]
@@ -141,5 +142,3 @@ function Counter({ initialCount }) {
 
 - [React 공식 문서 - useReducer](https://react.dev/reference/react/useReducer)
 - [React 공식 문서 - State 로직을 Reducer로 추출하기](https://react.dev/learn/extracting-state-logic-into-a-reducer)
-
----
