@@ -21,6 +21,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { Text } from '../constants/text';
+
 interface Post {
   title: string;
   description: string;

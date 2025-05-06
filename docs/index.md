@@ -11,7 +11,7 @@ hero:
       text: About Us
       link: /about
     - theme: alt
-      text: Study History
+      text: Study Note
       link: /content
 ---
 

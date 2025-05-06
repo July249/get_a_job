@@ -4,7 +4,7 @@
     "description": "CSR, SSR, SSG에 대한 설명 및 비교",
     "date": "2023-06-02",
     "author": "안정음, 이시현, 임하연",
-    "tags": ["Web", "Rendering", "CSR", "SSR", "SSG"],
+    "tags": ["Web","Rendering","CSR","SSR","SSG"],
     "url": "content/web/basic/csr-ssr-ssg"
   },
   {
@@ -12,7 +12,7 @@
     "description": "리액트의 useState에 대한 설명",
     "date": "2023-05-24",
     "author": "안정음",
-    "tags": ["React", "Hook", "useState", "State Management"],
+    "tags": ["React","Hook","useState","State Management"],
     "url": "content/web/react/useState"
   },
   {
@@ -20,7 +20,7 @@
     "description": "React에서의 생애주기에 대한 설명",
     "date": "2024-05-01",
     "author": "임하연, 이지형",
-    "tags": ["React", "Life Cycle", "Hook", "Component"],
+    "tags": ["React","Life Cycle","Hook","Component"],
     "url": "content/web/react/life-cycle"
   },
   {
@@ -28,7 +28,7 @@
     "description": "React의 가상 DOM에 대한 설명",
     "date": "2023-05-10",
     "author": "안정음",
-    "tags": ["React", "Virtual DOM", "Reconciliation", "Diffing"],
+    "tags": ["React","Virtual DOM","Reconciliation","Diffing"],
     "url": "content/web/react/virtual-dom"
   },
   {
@@ -36,7 +36,7 @@
     "description": "리액트의 useEffect에 대한 설명",
     "date": "2024-05-10",
     "author": "임하연",
-    "tags": ["React", "Hook", "useEffect", "Side Effect"],
+    "tags": ["React","Hook","useEffect","Side Effect"],
     "url": "content/web/react/useEffect"
   },
   {
@@ -44,7 +44,7 @@
     "description": "리액트에서의 렌더링 구동 방식에 대한 설명",
     "date": "2024-05-08",
     "author": "안정음, 이시현",
-    "tags": ["React", "Rendering", "Component", "Virtual DOM"],
+    "tags": ["React","Rendering","Component","Virtual DOM"],
     "url": "content/web/react/rendering"
   },
   {
@@ -52,7 +52,7 @@
     "description": "리액트의 useRef에 대한 설명",
     "date": "2023-05-24",
     "author": "안정음",
-    "tags": ["React", "Hook", "useRef", "DOM"],
+    "tags": ["React","Hook","useRef","DOM"],
     "url": "content/web/react/useRef"
   },
   {
@@ -60,7 +60,7 @@
     "description": "리액트의 useReducer에 대한 설명",
     "date": "2023-05-31",
     "author": "이시현, 임하연",
-    "tags": ["React", "Hook", "useReducer", "State Management"],
+    "tags": ["React","Hook","useReducer","State Management"],
     "url": "content/web/react/useReducer"
   },
   {
@@ -68,7 +68,7 @@
     "description": "리액트의 useMemo와 useCallback에 대한 설명 및 비교",
     "date": "2023-05-31",
     "author": "임하연, 이시현",
-    "tags": ["React", "Hook", "useMemo", "useCallback", "Performance"],
+    "tags": ["React","Hook","useMemo","useCallback","Performance"],
     "url": "content/web/react/useMemo-useCallback"
   },
   {
@@ -76,7 +76,7 @@
     "description": "자바스크립트에서의 변수 선언 방식인 var, let, const",
     "date": "2024-05-01",
     "author": "임하연, 안정음, 이시현",
-    "tags": ["JavaScript", "변수", "var", "let", "const", "호이스팅", "TDZ"],
+    "tags": ["JavaScript","변수","var","let","const","호이스팅","TDZ"],
     "url": "content/javascript/var-let-const"
   }
 ]
