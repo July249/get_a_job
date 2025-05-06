@@ -1,0 +1,32 @@
+[
+  {
+    "avatar": "https://github.com/custardcream98.png",
+    "name": "박시우",
+    "title": "Member",
+    "links": [{ "icon": "github", "link": "https://github.com/custardcream98" }]
+  },
+  {
+    "avatar": "https://github.com/hey210056.png",
+    "name": "이시현",
+    "title": "Member",
+    "links": [{ "icon": "github", "link": "https://github.com/hey210056" }]
+  },
+  {
+    "avatar": "https://github.com/Jeongeum.png",
+    "name": "안정음",
+    "title": "Member",
+    "links": [{ "icon": "github", "link": "https://github.com/Jeongeum" }]
+  },
+  {
+    "avatar": "https://github.com/hayeonii.png",
+    "name": "임하연",
+    "title": "Member",
+    "links": [{ "icon": "github", "link": "https://github.com/hayeonii" }]
+  },
+  {
+    "avatar": "https://github.com/July249.png",
+    "name": "이지형",
+    "title": "Member",
+    "links": [{ "icon": "github", "link": "https://github.com/July249" }]
+  }
+]
